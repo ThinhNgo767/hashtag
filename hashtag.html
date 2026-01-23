@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="hashtag.css" />
+    <title>Hashtag KBJ Idol</title>
+  </head>
+  <body>
+    <h1 class="title-site">Hashtag KBJ Idol</h1>
+    <div id="hashtag-container">
+      <!-- Hashtag content will be dynamically inserted here -->
+      <p id="hashtag-p">enter hashtags:</p>
+      <div class="container-input">
+        <input type="text" id="hashtag-input" placeholder="#example #hashtag" />
+        <button id="paste-hashtag-button">Paste</button>
+      </div>
+
+      <p id="status-message"></p>
+      <button id="submit-button">Submit</button>
+    </div>
+    <div id="result-container">
+      <!-- Results will be displayed here -->
+
+      <textarea id="hashtagTextArea" readonly disabled></textarea>
+      <div id="container-btn">
+        <button id="delete-button">Delete</button>
+        <button id="copy-button">Copy</button>
+      </div>
+    </div>
+
+    <script src="hashtag.js"></script>
+  </body>
+</html>

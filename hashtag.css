@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.title-site {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+  color: #3d4c1b;
+}
+#hashtag-container,
+#result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#result-container {
+  position: relative;
+  width: calc(20%);
+  margin: 2rem auto;
+}
+#hashtag-p {
+  font-size: 1.2em;
+  color: #555;
+  text-transform: uppercase;
+}
+#hashtag-input,
+#submit-button {
+  width: calc(20%);
+}
+#hashtag-input {
+  width: calc(70%);
+  height: 2rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+.container-input {
+  width: calc(20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#paste-hashtag-button {
+  right: 0;
+  height: 2rem;
+  width: calc(30%);
+  background-color: #e2efa7;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #1f290a;
+}
+#paste-hashtag-button:hover {
+  background-color: #9abf3a;
+}
+#hashtag-input:focus {
+  border-color: #b5d249;
+  border-width: 2px;
+  outline: none;
+}
+#submit-button {
+  height: 2.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: #3d4c1b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#submit-button:hover {
+  background-color: #2c3814;
+  animation: hoverEffect 0.5s infinite;
+}
+@keyframes hoverEffect {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+#status-message {
+  font-size: 0.8rem;
+  color: #75921e;
+  font-style: italic;
+}
+#hashtagTextArea {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  min-height: 50px;
+  overflow-y: hidden; /* Ẩn thanh cuộn */
+  resize: none; /* Ngăn người dùng tự kéo giãn lung tung */
+  line-height: 1.5;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e2efa7;
+  color: #1f290a;
+  box-sizing: border-box;
+}
+#container-btn {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+}
+#copy-button,
+#delete-button {
+  font-size: 0.7rem;
+  padding: 2px;
+  background-color: transparent;
+  border: thin solid #888;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#copy-button:hover {
+  background-color: #75921e;
+  color: #fff;
+  border-color: #75921e;
+}
+#delete-button:hover {
+  background-color: #1f290a;
+  color: #e2efa7;
+  border-color: #1f290a;
+}
