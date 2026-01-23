@@ -22,9 +22,8 @@ body {
   gap: 1rem;
 }
 #result-container {
-  position: relative;
   width: calc(20%);
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 #hashtag-p {
   font-size: 1.2em;
@@ -42,6 +41,9 @@ body {
   border: none;
   border-radius: 4px 0 0 4px;
 }
+#hashtag-input:focus {
+  outline: none;
+}
 .container-input {
   width: calc(20%);
   display: flex;
@@ -49,6 +51,10 @@ body {
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.container-input:focus-within {
+  border-color: #b5d249;
+  outline: thin solid #b5d249;
 }
 #paste-hashtag-button {
   right: 0;
@@ -65,11 +71,7 @@ body {
 #paste-hashtag-button:hover {
   background-color: #9abf3a;
 }
-#hashtag-input:focus {
-  border-color: #b5d249;
-  border-width: 2px;
-  outline: none;
-}
+
 #submit-button {
   height: 2.2rem;
   font-size: 1.2rem;
@@ -87,12 +89,15 @@ body {
 @keyframes hoverEffect {
   0% {
     transform: translateY(0px);
+    opacity: 1;
   }
   50% {
     transform: translateY(3px);
+    opacity: 0.9;
   }
   100% {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 #status-message {
@@ -117,18 +122,23 @@ body {
   box-sizing: border-box;
 }
 #container-btn {
-  position: absolute;
-  right: 1%;
-  top: -45%;
+  float: right;
+  margin-bottom: 0.5rem;
 }
 #copy-button,
-#delete-button {
+#delete-button,
+#hide-button {
   font-size: 0.7rem;
-  padding: 3px;
+  padding: 3px 5px;
   background-color: transparent;
   border: thin solid #888;
   border-radius: 4px;
   cursor: pointer;
+}
+#hide-button:hover,
+#copy-button:hover,
+#delete-button:hover {
+  animation: hoverEffect 0.5s infinite;
 }
 #copy-button:hover {
   background-color: #75921e;
@@ -136,7 +146,49 @@ body {
   border-color: #75921e;
 }
 #delete-button:hover {
-  background-color: #1f290a;
-  color: #e2efa7;
-  border-color: #1f290a;
+  background-color: #ccc;
+  color: #1f290a;
+  border-color: #ccc;
+}
+.hide-hashtag {
+  animation: hideHastag 0.7s ease-in-out;
+  opacity: 0;
+}
+.show-hashtag {
+  animation: showHastag 0.8s ease-in-out;
+  opacity: 1;
+}
+@keyframes hideHastag {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes showHastag {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }

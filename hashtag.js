@@ -5,6 +5,8 @@ const pasteData = document.getElementById("paste-hashtag-button");
 const copyData = document.getElementById("copy-button");
 const deleteData = document.getElementById("delete-button");
 const resultContainer = document.getElementById("result-container");
+const hideData = document.getElementById("hide-button");
+const textArea = document.querySelector("#hashtagTextArea");
 
 let savedData = JSON.parse(localStorage.getItem("kbjHashtag")) || [];
 
@@ -63,7 +65,6 @@ saveButton.addEventListener("click", saveHashtag);
 // renderHashtags();
 
 function renderToTextArea() {
-  const textArea = document.querySelector("#hashtagTextArea");
   if (!textArea) return;
   if (savedData.length === 0) {
     resultContainer.style.display = "none";
@@ -105,4 +106,19 @@ deleteData.addEventListener("click", function () {
   localStorage.removeItem("kbjHashtag");
   renderToTextArea();
   statusMessage.textContent = "Đã xóa tất cả hashtag đã lưu.";
+});
+
+let flagButton = true;
+
+hideData.addEventListener("click", function () {
+  flagButton = !flagButton;
+  if (flagButton) {
+    hideData.innerText = "Hide";
+    textArea.classList.add("show-hashtag");
+    textArea.classList.remove("hide-hashtag");
+  } else {
+    hideData.innerText = "Show";
+    textArea.classList.add("hide-hashtag");
+    textArea.classList.remove("show-hashtag");
+  }
 });
