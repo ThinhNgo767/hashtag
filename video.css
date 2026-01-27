@@ -17,20 +17,14 @@ video {
   object-fit: cover;
   width: calc(100% - 10px);
 }
-input {
-  display: none;
-}
-#title-frame {
-  color: #75921e;
-  margin-top: 0.75rem;
-}
+
 #select-file {
   width: 100%;
 }
 
 #btn-select {
   display: block;
-  margin: 0 10px;
+  margin: 10px;
   background-color: #8fa939;
   color: #fff;
   width: calc(50% - 20px);
@@ -47,14 +41,28 @@ input {
 #btn-select:active {
   transform: scale(0.95);
 }
-#container-control-btn,
-#container-control-btn button {
-  display: flex;
+#container-control-btn {
+  display: none;
+  margin-bottom: 2rem;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
+
 #container-control-btn button {
-  padding: 5px 10px;
-  gap: 0;
+  height: 2rem;
+  width: 6rem;
+  background-color: #f5f4f4;
+  border: #888 thin solid;
+  border-radius: 3px;
+}
+#control-time {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+#control-time > input {
+  width: 85%;
 }
