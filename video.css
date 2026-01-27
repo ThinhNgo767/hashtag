@@ -15,30 +15,35 @@ video {
   display: none;
   aspect-ratio: 9/16;
   object-fit: cover;
-  width: calc(100% - 10px);
+  width: calc(90% - 10px);
 }
 
 #select-file {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#btn-select {
+#btn-select,
+#select-again {
   display: block;
-  margin: 10px;
+  margin: 10px 25px;
   background-color: #8fa939;
   color: #fff;
   width: calc(50% - 20px);
   height: 2rem;
   align-content: center;
   padding-left: 0.5rem;
-  border: solid thin #888;
+  border: solid thin #8fa939;
   border-radius: 3px;
-  box-shadow: 2px 2px 5px #888;
+  box-shadow: 1px 5px 8px #888;
   font-size: 1.1rem;
   text-align: center;
   text-transform: uppercase;
 }
-#btn-select:active {
+#btn-select:active,
+#select-again:active {
   transform: scale(0.95);
 }
 #container-control-btn {
