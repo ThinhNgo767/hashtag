@@ -8,6 +8,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
+
 .title-site {
   text-align: center;
   margin: 20px 0;
@@ -29,6 +30,7 @@ body {
   font-size: 1.2em;
   color: #555;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 #hashtag-input,
 #submit-button {
@@ -37,6 +39,7 @@ body {
 #hashtag-input {
   width: calc(70%);
   height: 2rem;
+  font-size: 1rem;
   padding-left: 0.5rem;
   border: none;
   border-radius: 4px 0 0 4px;
@@ -190,5 +193,36 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+footer {
+  text-align: center;
+}
+footer > p > a {
+  text-decoration: none;
+  color: #75921e;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .container-input,
+  #submit-button {
+    width: calc(80%);
+    height: 2.5rem;
+  }
+  #paste-hashtag-button,
+  #hashtag-input {
+    height: 100%;
+  }
+  #result-container {
+    width: calc(80%);
+    min-height: 70vh;
+  }
+  #copy-button,
+  #delete-button,
+  #hide-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin-bottom: 1rem;
   }
 }

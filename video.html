@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Frame</title>
+    <link rel="stylesheet" href="video.css" />
+  </head>
+  <body>
+    <h1 id="title-frame">Video Frame</h1>
+    <div id="select-file">
+      <input type="file" id="input-file" />
+      <label for="input-file" id="btn-select">Chọn Video</label>
+    </div>
+
+    <video id="video" preload="metadata" controls></video>
+    <div id="container-control-btn">
+      <button id="next">Next »</button>
+      <span id="current_time"></span>
+      <button id="back">« Back</button>
+    </div>
+
+    <script src="./video.js"></script>
+  </body>
+</html>
