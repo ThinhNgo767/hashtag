@@ -16,11 +16,18 @@ document.getElementById("btn-select").addEventListener("click", () => {
 
 async function selectVideo(file) {
   const thum = await generateThumbnail(file);
+
   const src = URL.createObjectURL(file);
+
+  if (!thum) {
+    alert("iOS không tạo được thumbnail");
+  }
   const pic = URL.createObjectURL(thum);
 
   video.src = src;
   video.poster = pic;
+  video.muted = true;
+  video.playsInline = true;
   video.style.display = "block";
   controlButton.style.display = "flex";
   document.getElementById("control-time").style.display = "flex";
@@ -32,27 +39,31 @@ function generateThumbnail(file) {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
 
+    video.preload = "metadata";
+    video.muted = true;
+    video.playsInline = true;
     video.src = URL.createObjectURL(file);
-    video.currentTime = 1; // Capture frame at 2 seconds
 
-    video.onloadeddata = () => {
+    video.onloadedmetadata = () => {
+      video.currentTime = Math.min(1, video.duration / 2);
+    };
+
+    video.onseeked = () => {
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      // Convert to Blob for upload, specify JPEG format
+
       canvas.toBlob(
         (blob) => {
           resolve(blob);
+          URL.revokeObjectURL(video.src);
         },
         "image/jpeg",
-        0.9, // Quality
+        0.9,
       );
-      URL.revokeObjectURL(video.src); // Release memory
     };
 
-    video.onerror = () => {
-      resolve(null); // Return null if there's an error
-    };
+    video.onerror = () => resolve(null);
   });
 }
 
