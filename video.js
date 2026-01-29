@@ -8,6 +8,10 @@ const durationRange = document.getElementById("duration");
 
 const controlButton = document.getElementById("container-control-btn");
 
+const speedBox = document.getElementById("container-speed");
+
+const speedList = speedBox.querySelectorAll("input");
+
 let isPlay = false;
 
 document.getElementById("btn-select").addEventListener("click", () => {
@@ -15,12 +19,14 @@ document.getElementById("btn-select").addEventListener("click", () => {
 });
 
 async function selectVideo(file) {
+  if (!file) return;
   const thum = await generateThumbnail(file);
 
   const src = URL.createObjectURL(file);
 
   if (!thum) {
     alert("iOS không tạo được thumbnail");
+    return;
   }
   const pic = URL.createObjectURL(thum);
 
@@ -30,6 +36,7 @@ async function selectVideo(file) {
   video.playsInline = true;
   video.style.display = "block";
   controlButton.style.display = "flex";
+  speedBox.style.display = "flex";
   document.getElementById("control-time").style.display = "flex";
 }
 
@@ -112,9 +119,16 @@ again.addEventListener("click", function () {
   file.value = "";
   video.style.display = "none";
   controlButton.style.display = "none";
+  speedBox.style.display = "none";
   document.getElementById("control-time").style.display = "none";
 });
 
 durationRange.addEventListener("input", () => {
   video.currentTime = durationRange.value;
+});
+
+speedList.forEach((i) => {
+  i.addEventListener("click", () => {
+    video.playbackRate = i.value;
+  });
 });

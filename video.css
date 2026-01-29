@@ -71,3 +71,24 @@ video {
 #control-time > input {
   width: 85%;
 }
+
+#container-speed {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#container-speed > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+#container-speed > label > input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #8fa939;
+}
+#container-speed > label > span {
+  font-size: 1.1rem;
+}
