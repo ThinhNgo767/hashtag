@@ -2,8 +2,8 @@ const CACHE = "savehashtag-v1";
 const FILES = [
   "./",
   "./index.html",
-  "./hashtag.css",
-  "./hashtag.js",
+  "./index.css",
+  "./index.js",
   "./pages/video.html",
   "./pages/video.js",
   "./pages/video.css",
