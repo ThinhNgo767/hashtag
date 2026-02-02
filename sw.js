@@ -7,6 +7,8 @@ const FILES = [
   "./pages/video.html",
   "./pages/video.js",
   "./pages/video.css",
+  "./css/style.css",
+  "./js/javascript.js",
   "./manifest.json",
 ];
 
