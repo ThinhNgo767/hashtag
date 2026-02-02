@@ -122,3 +122,7 @@ hideData.addEventListener("click", function () {
     textArea.classList.remove("show-hashtag");
   }
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}

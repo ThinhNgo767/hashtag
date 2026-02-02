@@ -26,11 +26,15 @@ body {
   width: calc(20%);
   margin: 1rem auto;
 }
+#welcom {
+  width: 85%;
+  text-align: center;
+}
 #hashtag-p {
-  font-size: 1.2em;
-  color: #555;
+  font-size: 1.4em;
+  color: #8fa939;
   text-transform: uppercase;
-  margin-top: 1rem;
+  font-weight: bold;
 }
 #hashtag-input,
 #submit-button {
@@ -123,6 +127,7 @@ body {
   background-color: #e7e9eb;
   color: #1f290a;
   box-sizing: border-box;
+  field-sizing: content;
 }
 #container-btn {
   float: right;
@@ -194,14 +199,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-footer {
-  text-align: center;
-}
-footer > p > a {
-  text-decoration: none;
-  color: #75921e;
-  font-size: 1rem;
 }
 
 @media (max-width: 600px) {

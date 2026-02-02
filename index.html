@@ -4,13 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="hashtag.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+      integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Hashtag KBJ Idol</title>
   </head>
 
   <body>
     <div id="hashtag-container">
+      <div id="mySidepanel" class="sidepanel">
+        <button class="closebtn" onclick="closeNav()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#">Save Hashtag</a>
+        <a href="./pages/video.html">Video Frame</a>
+      </div>
+      <div class="container-header">
+        <div class="toggle-menu">
+          <button class="bar-menu" id="openBtn" onclick="openNav()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div id="welcom">
+          <p id="hashtag-p">enter hashtags</p>
+        </div>
+      </div>
       <!-- Hashtag content will be dynamically inserted here -->
-      <p id="hashtag-p">enter hashtags:</p>
+
       <div class="container-input">
         <input type="text" id="hashtag-input" placeholder="#example #hashtag" />
         <button id="paste-hashtag-button">Paste</button>
@@ -31,8 +61,6 @@
     </div>
 
     <script src="hashtag.js"></script>
+    <script src="./js/javascript.js"></script>
   </body>
-  <footer>
-    <p><a href="./video.html" target="_blank">Video Frame</a></p>
-  </footer>
 </html>
