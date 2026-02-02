@@ -49,21 +49,6 @@ function saveHashtag() {
 
 saveButton.addEventListener("click", saveHashtag);
 
-// function renderHashtags() {
-//   const listElement = document.querySelector("#hashtagList"); // Giả sử bạn có <ul id="hashtagList"></ul>
-//   if (!listElement) return;
-
-//   listElement.innerHTML = ""; // Xóa danh sách cũ
-//   savedData.forEach((item) => {
-//     const li = document.createElement("li");
-//     li.textContent = item;
-//     listElement.appendChild(li);
-//   });
-// }
-
-// // Gọi hàm này ngay khi trang web vừa load xong
-// renderHashtags();
-
 function renderToTextArea() {
   if (!textArea) return;
   if (savedData.length === 0) {
@@ -124,5 +109,5 @@ hideData.addEventListener("click", function () {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
+  navigator.serviceWorker.register("./psw.js");
 }
